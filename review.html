@@ -26,13 +26,13 @@
           </div>
           <div class="goodsSales">
             <!-- goodsSales 占位id=sales -->
-            <!-- <a href="#">
+            <a href="#">
               <div class="img">
                   <img src="" alt="图片">
               </div>
              
               <p>乐视TV(Letv)超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</p>
-            </a> -->
+            </a>
           </div>
         </div>
         <div class="review_content">
@@ -69,7 +69,13 @@
       <script src="./lib/js/bootstrap.js"></script>
       <script src="./lib/art-template/template-web.js"></script>
       <script type="text/template" id="sales">
- 
+        <a href="#">
+            <div class="img">
+                {{@ item.productImg}}
+            </div>
+           
+            <p>{{item.productName}}</p>
+          </a>
        
   </script>
        <script type="text/template" id="getbrandproductlist">
@@ -107,8 +113,8 @@
           "limit" :4
         },
         success: function (res) {
-          console.log(res);
-          var liss= template('sales',{item:res.result})
+          console.log(res.result[0]);
+          var liss= template('sales',{item:res.result[0]})
           // console.log(lis);
           $('.goodsSales').html(liss);
          

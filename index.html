@@ -120,7 +120,7 @@
         type: "get",
         dataType: "json",
         success: function (res) {
-          // console.log(res);
+          console.log(res);
           var lis= template('brandtitle',{item:res.result})
           // console.log(lis);
           $('.content_nav ul').html(lis)
