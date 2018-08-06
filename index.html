@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <!-- 微软  -->
+  <!-- 如果 用ie浏览器访问 网站的 优先使用最高内核解析  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 理想视口的标准写法 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>bootstrap</title>
+  <link rel="stylesheet" href="./lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/public.css">
+  <link rel="stylesheet" href="css/content.css">
+  <!-- 条件注释 -->
+  <!-- 
+    1 兼容h5语义标签  html5shiv.js 
+    2 respond.js  识别媒体查询代码 css3  如果以静态文件的方式打开  没有效果 
+   -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    .row div {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <!-- 顶部部分开始 -->
+  <header>
+    <a href="javascript:;" class="mm_logo">慢慢买</a>
+    <a href="javascript:;" class="mm_app"></a>
+  </header>
+  <!-- 顶部部分结束 -->
+
+  <!-- 搜索框 -->
+  <div class="hunt">
+    <input type="text" placeholder="请输入您要比价的商品">
+    <button>搜索</button>
+  </div>
+
+  <!-- 内容 -->
+  <div class="content w">
+    <div class="content_title">
+      <a href="#">首页 > </a>
+      <a href="#">全部分类 > </a>
+    </div>
+
+
+    <div class="content_titlenav">
+      <p>热门品牌排行</p>
+    </div>
+    <div class="content_nav">
+      <ul>
+
+        <!-- brandtitle占位 -->
+        <!-- <li>
+            <a href="./fenleiId.html?id={{vlaue.}}">平板电视十大品牌</a>
+            <span></span>
+         
+        </li> -->
+
+
+      </ul>
+    </div>
+  </div>
+  <!-- 1 写大容器 .container-fluid -->
+  <div class="container">
+    <!-- 2 写行 .row -->
+
+  </div>
+
+  <!-- 底部部分开始 -->
+  <footer>
+    <div class="foot_tit">
+      <strong>品牌排行</strong>
+      <i class="iconfont">&#xe72f;</i>
+    </div>
+    <div class="foot_user">
+      <a href="javascript:;" class="foot_login">登录</a>
+      <a href="javascript:;" class="foot_register">注册</a>
+      <a href="javascript:;" class="foot_return">
+        <i class="iconfont">&#xe648;</i>
+        返回顶部
+      </a>
+    </div>
+    <div class="foot_text">
+      <div class="text_box">
+        <span class="text_sp">手机APP下载</span>
+        <span class="text_sp">慢慢买手机版</span>
+        <span class="text_sp">--掌上比价平台</span>
+      </div>
+      <p>m.manmanbuy.com</p>
+    </div>
+  </footer>
+  <!-- 底部部分结束 -->
+  <script src="./lib/js/jquery.js"></script>
+  <script src="./lib/js/bootstrap.js"></script>
+   <script src="./lib/art-template/template-web.js"></script>
+  
+   <script type="text/template" id="brandtitle">
+    {{each item value index}}
+    <li> 
+        <a href="./fenleiId.html?id={{value.brandTitleId}}">{{value.brandTitle}}</a>
+        <span> > </span>
+     
+    </li>
+    {{/each}}
+</script>
+  <script>
+    $(function () {
+      $.ajax({
+        url: "http://193.112.55.79:9090/api/getbrandtitle",
+        type: "get",
+        dataType: "json",
+        success: function (res) {
+          // console.log(res);
+          var lis= template('brandtitle',{item:res.result})
+          // console.log(lis);
+          $('.content_nav ul').html(lis)
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

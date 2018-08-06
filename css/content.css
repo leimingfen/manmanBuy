@@ -1,0 +1,65 @@
+.content .content_title {
+  padding: 0 10px;
+  border-top: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
+  font-size: 16px;
+  height: 40px;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d2d2d2), to(white));
+  background-image: linear-gradient(to top, #d2d2d2, white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+
+.content .content_titlenav {
+  padding: 0 10px;
+  border: 1px solid #d2d2d2;
+  font-size: 20px;
+  color: #935a1f;
+  height: 40px;
+  width: 98%;
+  margin: 10px auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ededed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.content .content_nav {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.content .content_nav ul li {
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  border-top: 1px solid #d2d2d2;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ededed;
+}
+
+.content .content_nav ul li span {
+  color: #b91818;
+}
+/*# sourceMappingURL=content.css.map */

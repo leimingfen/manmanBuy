@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/public.css">
+  <link rel="stylesheet" href="./css/review.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+      <!-- 顶部部分开始 -->
+      <header>
+          <a href="javascript:;" class="mm_logo">慢慢买</a>
+          <a href="javascript:;" class="mm_app"></a>
+      </header>
+      <!-- 顶部部分结束 -->
+  <div class="review w">
+      <div class="review_title ">
+          <div class="newReview">
+            <p>平板电视最新评论</p>
+          </div>
+          <div class="goodsSales">
+            <!-- goodsSales 占位id=sales -->
+            <!-- <a href="#">
+              <div class="img">
+                  <img src="" alt="图片">
+              </div>
+             
+              <p>乐视TV(Letv)超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</p>
+            </a> -->
+          </div>
+        </div>
+        <div class="review_content">
+            <!-- review_content  id=getbrandproductlist 模板占位 --> 
+        </div>
+  </div>
+  
+      <!-- 底部部分开始 -->
+      <footer>
+          <div class="foot_tit">
+              <strong>品牌排行</strong>
+              <i class="iconfont">&#xe72f;</i>
+          </div>
+          <div class="foot_user">
+              <a href="javascript:;" class="foot_login">登录</a>
+              <a href="javascript:;" class="foot_register">注册</a>
+              <a href="javascript:;" class="foot_return">
+                  <i class="iconfont">&#xe648;</i>
+                  返回顶部
+              </a>
+          </div>
+          <div class="foot_text">
+              <div class="text_box">
+                  <span class="text_sp">手机APP下载</span>
+                  <span class="text_sp">慢慢买手机版</span>
+                  <span class="text_sp">--掌上比价平台</span>
+              </div>
+              <p>m.manmanbuy.com</p>
+          </div>
+      </footer>
+      <!-- 底部部分结束 -->
+
+      <script src="./lib/js/jquery.js"></script>
+      <script src="./lib/js/bootstrap.js"></script>
+      <script src="./lib/art-template/template-web.js"></script>
+      <script type="text/template" id="sales">
+ 
+       
+  </script>
+       <script type="text/template" id="getbrandproductlist">
+    
+             
+                          <i>
+                              <span class="i_left"></span>
+                              <span class="i_right"></span>
+                          </i>
+                          <div class="review_content_t">
+                                                <div  class="content_tl">
+                                                    <span class="username">{{comName}}：  </span>
+                                                    <span class="xing">  ☆☆☆☆☆</span>
+                                                </div>
+                            
+                            <span>{{comTime}}</span>
+                                    </div>
+                          <div class="review_content_c">
+                            <p>{{comContent}}</p>
+                          </div>
+             
+         
+        
+    </script>
+      <script>
+        $(function () {
+          var id=location.search.substring(4);
+          console.log(id);
+         
+          $.ajax({
+        url: "http://193.112.55.79:9090/api/getbrandproductlist",
+        type: "get",
+        dataType: "json",
+        data:{"brandtitleid":id,
+          "limit" :4
+        },
+        success: function (res) {
+          console.log(res);
+          var liss= template('sales',{item:res.result})
+          // console.log(lis);
+          $('.goodsSales').html(liss);
+         
+        }
+      })
+
+
+          $.ajax({
+            url: "http://193.112.55.79:9090/api/getproductcom",
+            // 9页面的url
+            // url: "http://193.112.55.79:9090/api/getsitenav",
+            type: "get",
+            dataType: "json",
+            data:{"productId":id},
+            success: function (res) {
+              console.log(res);
+              var lis= template('getbrandproductlist',{item:res.result})
+              // console.log(lis);
+              $('.review_content').html(lis);
+             
+            }
+          })
+        })
+      </script>
+</body>
+
+</html>

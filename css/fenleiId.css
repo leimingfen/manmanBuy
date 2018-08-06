@@ -1,0 +1,105 @@
+.content_title {
+  padding: 0 10px;
+  border-top: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
+  font-size: 16px;
+  height: 40px;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#d2d2d2), to(white));
+  background-image: linear-gradient(to top, #d2d2d2, white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+
+.content_h4 {
+  padding: 0 10px;
+  border: 1px solid #d2d2d2;
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ededed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  color: #935a1f;
+}
+
+.content_detail ul li {
+  height: 70px;
+}
+
+.content_detail ul li .dianji {
+  padding: 8px 0;
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: #cccaca 1px solid;
+}
+
+.content_detail ul li .dianji .left1 {
+  position: absolute;
+  top: 15px;
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.paihang {
+  background-color: #b9b9b9;
+}
+
+.paihang1 {
+  background-color: #ee2828;
+}
+
+.paihang2 {
+  background-color: #ecaf3d;
+}
+
+.paihang3 {
+  background-color: #6ceb72;
+}
+
+.content_detail ul li .dianji div {
+  margin-left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.content_detail ul li .dianji div .a {
+  font-size: 20px;
+}
+
+.content_detail ul li .dianji div P {
+  color: #918e8e;
+}
+
+.content_detail ul li .dianji .rightA {
+  color: #bebebe;
+  position: absolute;
+  right: 10px;
+  font-size: 30px;
+}
+/*# sourceMappingURL=fenleiId.css.map */

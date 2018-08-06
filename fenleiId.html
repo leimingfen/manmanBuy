@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <!-- 微软  -->
+  <!-- 如果 用ie浏览器访问 网站的 优先使用最高内核解析  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 理想视口的标准写法 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>bootstrap</title>
+  <link rel="stylesheet" href="./lib/css/bootstrap.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/public.css">
+  <link rel="stylesheet" href="./css/fenleiId.css">
+  <!-- 条件注释 -->
+  <!-- 
+    1 兼容h5语义标签  html5shiv.js 
+    2 respond.js  识别媒体查询代码 css3  如果以静态文件的方式打开  没有效果 
+   -->
+  <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style>
+  .row div{
+    border: 1px solid #000;
+  }
+</style>
+</head>
+
+<body>
+  
+
+    <!-- 顶部部分开始 -->
+    <header>
+        <a href="javascript:;" class="mm_logo">慢慢买</a>
+        <a href="javascript:;" class="mm_app"></a>
+    </header>
+    <!-- 顶部部分结束 -->
+
+    <!-- 搜索框 -->
+    <div class="hunt">
+        <input type="text" placeholder="请输入您要比价的商品">
+        <button>搜索</button>
+    </div>
+
+    <!-- 内容 -->
+    <div class="content w">
+      
+        <!-- 动态渲染 getbrand 占位-->
+
+
+
+      </div>   <!-- 1 写大容器 .container-fluid -->
+  <div class="container">
+      <!-- 2 写行 .row -->
+     
+    </div>
+    
+    <!-- 底部部分开始 -->
+    <footer>
+      <div class="foot_tit">
+          <strong>品牌排行</strong>
+          <i class="iconfont">&#xe72f;</i>
+      </div>
+      <div class="foot_user">
+          <a href="javascript:;" class="foot_login">登录</a>
+          <a href="javascript:;" class="foot_register">注册</a>
+          <a href="javascript:;" class="foot_return">
+              <i class="iconfont">&#xe648;</i>
+              返回顶部
+          </a>
+      </div>
+      <div class="foot_text">
+          <div class="text_box">
+              <span class="text_sp">手机APP下载</span>
+              <span class="text_sp">慢慢买手机版</span>
+              <span class="text_sp">--掌上比价平台</span>
+          </div>
+          <p>m.manmanbuy.com</p>
+      </div>
+  </footer>
+  <!-- 底部部分结束 -->
+  <script src="./lib/js/jquery.js"></script>
+  <script src="./lib/js/bootstrap.js"></script>
+  <script src="./lib/art-template/template-web.js"></script>
+  <!-- "brandId": "品牌id",
+			"brandTitleId": "品牌标题id",
+			"brandName": "品牌名称",
+			"brandInfo": "品牌全网销售量",
+			"categoryId": "分类id" -->
+
+   <script type="text/template" id="getbrand">
+   
+    <div class="content_title">
+        <a href="#">首页 > </a>
+        <a href="#">全部分类 > </a>
+      </div>
+      <div class="content_h4">
+        <p>{{brandName}}哪个牌子好</p>
+      </div>
+      <div class="content_detail">
+        <ul class="content_detail_ul">
+            {{each item value index}}
+            <li>
+                <a class="dianji" href="./sales.html?id={{value.brandTitleId}} ">
+                   <span class="left1  paihang1">1</span>
+                 <div>
+                   <span class="a" >{{value.brandName}}</span>
+                   <p>30天全网销售：{{value.brandInfo}}</p>
+                 </div>
+                 <span class="rightA"> > </span>
+                </a>
+               </li>
+               {{/each}}
+        </ul>
+      </div>
+   
+    
+</script>
+  <script>
+    $(function () {
+      var id=location.search.substring(4);
+      // console.log(id);
+      // var id=brandtitleid.indexOf(4);
+      // console.log(id);
+      
+      // $('.left1')
+   
+      
+      //游戏中心
+      $.ajax({
+        url: "http://193.112.55.79:9090/api/getbrand",
+        type: "get",
+        dataType: "json",
+        data:{brandtitleid:id},
+        success: function (res) {
+          console.log(res);
+          var lis= template('getbrand',{item:res.result})
+          // console.log(lis);
+          $('.content').html(lis);
+          // var left1=document.querySelectorAll('.left1');
+          // for (var i = 0; i <res.result.length; i++) {
+          //   var  aa = res.result[i];
+          //   var aaaa=aa.brandInfo;
+          //   var a1=aaaa.substring(8)
+           
+          //   var value = a1.replace(/[^0-9]/ig,""); 
+          //   console.log(value);
+          //   var a2=value.split("\n")
+
+          // //  var arrs= arr.push(value);
+          //  console.log(a2);
+           
+          // }
+         
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

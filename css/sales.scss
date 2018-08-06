@@ -1,0 +1,60 @@
+.sales_h4{
+  padding: 0 10px;
+  border: 1px solid rgb(210, 210, 210);
+  font-size: 20px;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(237, 237, 237);
+  display: flex;
+  align-items: center;
+  color: rgb(147, 90, 31);
+}
+.sales_content{
+  width: 100%;
+ 
+  ul{
+    li{
+      display: flex;
+      height: 100px;
+      align-items: center;
+      border-bottom: 1px solid rgb(210, 210, 210);
+      padding: 6px;
+      .img{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .goodsSales{
+        flex:2;
+        a{
+          font-size: 14px;
+        }
+        .jiage{
+          display: flex;
+          justify-content: space-between;
+          margin-top: 3px;
+          span{
+            color: rgb(226, 65, 65);
+          }
+         .xing{
+           color: rgb(255, 142, 0);
+           margin-right: 5px;
+         }
+        }
+        .baojia{
+          a{
+            font-size: 8px;
+            color: rgb(194, 200, 215);
+            .pinglun{
+              margin-left: 5px;
+            }
+          }
+          
+        }
+      }
+    }
+  }
+
+}
