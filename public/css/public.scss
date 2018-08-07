@@ -1,0 +1,109 @@
+  /* 字体图标 */
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+  
+// 顶部部分开始
+  header {
+    height: 50px;
+    padding: 0 15px;
+    background-color: rgb(255, 132, 29);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .mm_logo{
+       width: 185px;
+       height: 25px;
+       font-size: 0;
+       background-image: url('../img/mmm_logo.png');
+       background-repeat: no-repeat;
+       background-size: 185px 25px;
+    }
+    .mm_app{
+        height: 34px;
+        width: 34px;
+        background-image: url('../img/APP1.png');
+        background-size: 34px 34px;
+    }
+}
+
+// 顶部部分结束
+ 
+ 
+ // 底部部分开始
+ footer{
+    background-color: rgb(239, 239, 239);
+    .foot_tit{
+        padding: 0 15px;
+        height: 40px;
+        background-color: rgb(255, 132, 29);
+        font-size: 20px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        i{
+            font-size: 22px;
+            font-weight: normal;
+        }
+    }
+    .foot_user{
+        margin: 30px 0 15px 0;
+        display: flex;
+        font-size: 18px;
+        align-items: center;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        a{
+           flex: 1;
+           height: 40px;
+           line-height: 40px;
+           text-align: center;
+       }
+       .foot_register{
+           border-left: 1px solid #ccc;
+           border-right: 1px solid #ccc;
+       }
+       .foot_return{
+           i{
+               font-size: 22px;
+               color: rgb(116, 116, 116);
+           }
+       }
+    }
+    .foot_text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .text_box{
+            span:nth-child(1){
+                color: red;
+            }
+            span:nth-child(2){
+               color: rgb(39, 39, 39);
+           }
+           span:nth-child(3){
+               color: rgb(92, 91, 91);
+           }
+        }
+        p{
+           color: rgb(92, 91, 91); 
+           margin-bottom: 15px; 
+        }
+    }
+}
+// 底部部分结束

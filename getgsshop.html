@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/getsshops.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="back"></a>
+        <div class="tlt">
+            <h3>凑单品</h3>
+        </div>
+    </header>
+    <section class="selector">
+        <div class="allSelect">
+            <ul>
+                <li><a href="javascript:;">京东</a></li>
+                <li><a href="javascript:;">华北</a></li>
+                <li><a href="javascript:;">全部价格</a></li>
+            </ul>
+            <div class="search">
+                <i><img src="images/search.png" alt=""></i>
+            </div>
+
+
+            <!-- 各种下拉 -->
+        </div>
+    </section>
+</body>
+<script>
+    onload = function () {
+        setHTML();
+
+        // 为了在pc端更好的去调试
+        onresize = function () {
+            setHTML();
+        }
+        function setHTML() {
+            // 基础值
+            var baseVal = 100;
+            // 设计稿的宽度
+            var pageWidth = 640;
+            // 要适配的屏幕的宽度?
+            var screenWidth = document.querySelector("html").offsetWidth;
+            // 要设置的fontsize
+            var fontsize = screenWidth * baseVal / pageWidth;
+
+            // 设置到html标签的中
+            document.querySelector("html").style.fontSize = fontsize + "px";
+
+        }
+    }
+</script>
+
+</html>

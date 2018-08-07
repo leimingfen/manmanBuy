@@ -1,3 +1,8 @@
+.review{
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+
 .sales_h4{
   padding: 0 10px;
   border: 1px solid rgb(210, 210, 210);
@@ -14,9 +19,10 @@
   width: 100%;
  
   ul{
+    background-color: #fff;
     li{
       display: flex;
-      height: 100px;
+      height: 120px;
       align-items: center;
       border-bottom: 1px solid rgb(210, 210, 210);
       padding: 6px;
@@ -25,16 +31,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-right: 5px;
       }
       .goodsSales{
         flex:2;
         a{
           font-size: 14px;
+          // margin: 5px;
+         
         }
         .jiage{
           display: flex;
           justify-content: space-between;
           margin-top: 3px;
+          background-color: #fff;
           span{
             color: rgb(226, 65, 65);
           }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/getconpon.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="back"></a>
+        <div class="tlt">
+            <h3>优惠券</h3>
+        </div>
+        <a href="#" class="app">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </header>
+    <section class="conpons">
+        <!-- <div class="item">
+            <a href="conpons.html">
+                <div class="logo">
+                    <img src="./images/kfc.jpg" alt="">
+                </div>
+                <span>肯德基</span>
+            </a>
+        </div>
+        <div class="item">
+            <a href="conpons.html">
+                <div class="logo">
+                    <img src="./images/kfc.jpg" alt="">
+                </div>
+                <span>肯德基</span>
+            </a>
+        </div> -->
+    </section>
+    <section class="location">
+        <div>
+            <span>首页&nbsp;</span>
+            <i>&gt;</i>
+            <span>&nbsp;优惠券</span>
+        </div>
+    </section>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/dialog.js"></script>
+<script src="./js/template-web.js"></script>
+
+<script type="text/template" id="template">
+    
+    {{each data value}}
+    <div class="item">
+        <a href="conpons_item.html?id={{value.couponId}}">
+            <div class="logo">
+                <img src="{{value.couponImg}}" alt="">
+            </div>
+            <span>{{value.couponTitle}}</span>
+        </a>
+    </div>
+    {{/each}}
+</script>
+
+<script>
+    $(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'http://mmb.ittun.com/api/getcoupon',
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                var data = res.result;
+                console.log(data);
+                var dataJson = template('template',{"data":data});
+                $(".conpons").html(dataJson);                          
+            }
+        })
+    })
+</script>
+
+</html>

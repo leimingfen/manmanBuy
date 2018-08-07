@@ -34,9 +34,9 @@
 .content_detail ul li {
   height: 70px;
 }
-.content_detail_ul{
-
-}
+.content_detail ul li:last-child{
+  border-bottom: 1px solid rgb(210, 210, 210);
+ }
 
 .content_detail ul li .dianji {
   padding: 8px 0;
@@ -73,6 +73,9 @@
 }
 .paihang3 {
   background-color: #6ceb72;
+}
+.content_detail ul{
+  background-color: #fff;
 }
 .content_detail ul li .dianji div {
   margin-left: 40px;

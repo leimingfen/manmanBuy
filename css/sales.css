@@ -1,3 +1,8 @@
+.review {
+  padding-bottom: 20px;
+  background-color: #fff;
+}
+
 .sales_h4 {
   padding: 0 10px;
   border: 1px solid #d2d2d2;
@@ -21,11 +26,15 @@
   width: 100%;
 }
 
+.sales_content ul {
+  background-color: #fff;
+}
+
 .sales_content ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
+  height: 120px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -46,6 +55,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-right: 5px;
 }
 
 .sales_content ul li .goodsSales {
@@ -66,6 +76,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 3px;
+  background-color: #fff;
 }
 
 .sales_content ul li .goodsSales .jiage span {

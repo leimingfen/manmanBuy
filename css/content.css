@@ -43,7 +43,7 @@
   font-weight: 600;
 }
 
-.content .content_nav ul li {
+.content .content_nav ul li a {
   padding: 0 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,7 +59,12 @@
   background-color: #ededed;
 }
 
-.content .content_nav ul li span {
-  color: #b91818;
+.content .content_nav ul li a span {
+  color: #afafaf;
+  float: right;
+}
+
+.content .content_nav ul li:last-child {
+  border-bottom: 1px solid #d2d2d2;
 }
 /*# sourceMappingURL=content.css.map */

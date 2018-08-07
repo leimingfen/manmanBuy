@@ -1,0 +1,156 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: aqua;
+}
+
+header {
+  height: .7rem;
+  width: 100%;
+  background-color: #ff8b00;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .back {
+  display: block;
+  width: .4rem;
+  height: .4rem;
+  background-image: url("../images/back.png");
+  background-repeat: no-repeat;
+  margin-left: .05rem;
+  background-position: center center;
+}
+
+header .tlt {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+
+header .tlt h3 {
+  color: white;
+  font-size: .3rem;
+}
+
+/* 选择 */
+.selector {
+  width: 100%;
+  height: 0.6rem;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.selector .allSelect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.selector .allSelect ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  border-right: 1px solid #333;
+}
+
+.selector .allSelect ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.selector .allSelect ul li::after {
+  content: "";
+  width: 0.2rem;
+  height: 0.2rem;
+  margin-top: 0.08rem;
+  margin-left: 0.05rem;
+  background-image: url("../images/dropdown.png");
+  background-size: 0.2rem 0.2rem;
+}
+
+.selector .allSelect ul li a {
+  text-align: center;
+  font-size: 0.25rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.selector .search {
+  width: 0.7rem;
+  height: 0.6rem;
+  padding: 0.12rem;
+}
+
+/* ul{
+    display: flex;
+    width: 100%;
+    align-content: center;
+    li{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex: 1;
+        a{
+            font-size: 0.25rem;
+            &::before{
+                content: "";
+                background-image: url("../images/dropdown.png");
+            }
+        }
+    }
+} */
+/*# sourceMappingURL=getsshops.css.map */

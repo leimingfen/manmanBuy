@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <!-- 微软  -->
+  <!-- 如果 用ie浏览器访问 网站的 优先使用最高内核解析  -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 理想视口的标准写法 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>bootstrap</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/public.css">
+  <link rel="stylesheet" href="./css/fenleiId.css">
+  <link rel="stylesheet" href="./css/review.css">
+  <link rel="stylesheet" href="./css/sales.css">
+
+ </head>
+
+<body>
+
+
+  <!-- 顶部部分开始 -->
+  <header>
+    <a href="javascript:;" class="mm_logo">慢慢买</a>
+    <a href="javascript:;" class="mm_app"></a>
+  </header>
+
+  <!-- 搜索框 -->
+  <div class="hunt">
+    <input type="text" placeholder="请输入您要比价的商品">
+    <button>搜索</button>
+  </div>
+
+  <!-- 哪个牌子好 fenleiid scss 1111111111111 -->
+  <div class="content w">
+    <div class="content_title">
+      <a href="javascript:;">首页 > </a>
+      <a href="javascript:;">全部分类 > </a>
+      <a href="#" style="color:#000;" class="titleName"></a>
+    </div>
+    <div class="content_h4">
+      <!-- <p>哪个牌子好</p> -->
+    </div>
+    <div class="content_detail">
+      <ul class="content_detail_ul">
+       
+      </ul>
+    </div>
+  </div>
+  <!-- 销量排行榜 fenleiid sales scss 22222222222-->
+  <div class="sales">
+    <div class="sales_h4">
+      <!-- <h4>平板电视销量排行榜</h4> -->
+    </div>
+    <div class="sales_content">
+      <ul>
+      <!-- <li  data-productId={{value.productId}}>
+            <div class="img">
+              <a href="javascript:;">
+                {{@ value.productImg}}
+              </a>
+            </div>
+            <div class="goodsSales">
+              <a href="javascript:;">{{value.productName}}</a>
+              <div class="jiage">
+                <span>{{value.productPrice}}</span>
+                <div class="xing">
+                  <p>☆☆☆☆☆</p>
+                </div>
+              </div>
+              <div class="baojia">
+                <a href="javascript:;" class="">
+                  <span>{{value.productQuote }}</span>
+                </a>
+                <a href="javascript:;" class="pinglun">
+                  <span>{{value.productCom }}</span>
+                </a>
+              </div>
+            </div>
+          </li> -->
+        
+      </ul>
+    </div>
+  </div>
+  <!-- 最新评论 fenleiid review scss 333333333333-->
+  <div class="review w">
+    <div class="newReview">
+      <!-- <p>平板电视最新评论</p> -->
+    </div>
+    <ul>
+      <!-- <li>
+        <div class="review_title ">
+          <div class="goodsSales">
+            <a href="#">
+              <div class="img">
+                <img src="" alt="图片">
+              </div>
+              <p>乐视TV(Letv)超3 X55 55英寸智能LED液晶 超级电视 4K超清电视</p>
+            </a>
+          </div>
+        </div>
+        <div class="review_content">
+          <i>
+            <span class="i_left"></span>
+            <span class="i_right"></span>
+          </i>
+            <div class="review_content_t">
+              <div class="content_tl">
+                <span class="username">{{value.comName}} 用户名: </span>
+                <span class="xing"> ☆☆☆☆☆</span>
+              </div>
+              <span>{{value.comTime}} 时间事件</span>
+            </div>
+            <div class="review_content_c">
+              <p>{{value.comContent}}内容若若若若</p>
+            </div>
+         
+        </div>
+      </li> -->
+    </ul>
+  </div>
+
+
+  <!-- 底部部分开始 -->
+  <footer>
+    <div class="foot_user">
+      <a href="javascript:;" class="foot_login">登录</a>
+      <a href="javascript:;" class="foot_register">注册</a>
+      <a href="javascript:;" class="foot_return">
+        <i class="iconfont">&#xe648;</i>
+        返回顶部
+      </a>
+    </div>
+    <div class="foot_text">
+      <div class="text_box">
+        <span class="text_sp">手机APP下载</span>
+        <span class="text_sp">慢慢买手机版</span>
+        <span class="text_sp">--掌上比价平台</span>
+      </div>
+      <p>m.manmanbuy.com</p>
+    </div>
+  </footer>
+  <!-- 底部部分结束 -->
+  <script src="./lib/zepto/zepto.min.js"></script>
+  <script src="./lib/template/template-web.js"></script>
+
+
+  <!-- 模板渲染 fenleiid 11111111111111  哪个牌子好-->
+  <script type="text/template" id="getbrand">
+    {{each item value index}}
+        <li>
+          <a class="dianji" href="javascript:;">
+            <span class="left1  paihang">1</span>
+            <div>
+              <span class="a">{{value.brandName}}</span>
+              <p>30天全网销售：{{value.brandInfo}}</p>
+            </div>
+            <span class="rightA"> > </span>
+          </a>
+        </li>
+        {{/each}}
+  </script>
+  <!--模板渲染 sales 22222222222 销量排行榜-->
+  <script type="text/template" id="getbrandproductlistsss">
+    {{each item value index}}
+        <li  data-productId={{value.productId}}>
+          <div class="img">
+            <a href="javascript:;">
+              {{@ value.productImg}}
+            </a>
+          </div>
+          <div class="goodsSales">
+            <a href="javascript:;">{{value.productName}}</a>
+            <div class="jiage">
+              <span>{{value.productPrice}}</span>
+              <div class="xing">
+                <p>☆☆☆☆☆</p>
+              </div>
+            </div>
+            <div class="baojia">
+              <a href="javascript:;" class="">
+                <span>{{value.productQuote }}</span>
+              </a>
+              <a href="javascript:;" class="pinglun">
+                <span>{{value.productCom }}</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        {{/each}}
+  </script>
+  <!--模板渲染 review 3333333333333 最新评论 内容-->
+  <script type="text/template" id="review_title_li">
+  {{each item value index}}
+  <li>
+      <div class="review_title ">
+        <div class="goodsSales goodsSales2">
+          <a href="#">
+            <div class="img">
+              <img src="" alt="图片">
+            </div>
+            <p></p>
+          </a>
+        </div>
+      </div>
+      <div class="review_content">
+        <i>
+          <span class="i_left"></span>
+          <span class="i_right"></span>
+        </i>
+          <div class="review_content_t">
+            <div class="content_tl">
+              <span class="username">{{value.comName}} : </span>
+              <span class="xing"> ☆☆☆☆☆</span>
+            </div>
+            <span>{{value.comTime}} </span>
+          </div>
+          <div class="review_content_c">
+            <p>{{value.comContent}}</p>
+          </div>
+       
+      </div>
+    </li> 
+  {{/each}}
+</script>
+  <!-- 发送ajax请求 -->
+  <script>
+    $(function () {
+      // var oldurl = location.href;
+      // var brandtitleId = oldurl.split('?')[1];
+
+      var brandtitleIdd = location.search.substring(4);
+      var aa=brandtitleIdd.split('&');
+      var brandtitleId=aa[0];
+      // console.log(brandtitleIdd);
+      // console.log(aa);
+      // console.log(brandtitleId);
+      
+      
+      var name = decodeURI(brandtitleIdd.split('&')[1]);
+      var titleName = name.substring(0, 4);
+
+     $('.titleName').html(titleName + '哪个牌子好');
+       $('.content_h4').html(titleName + '哪个牌子好');
+       $('.sales_h4').html(titleName + '产品销量排行');
+       $('.newReview').html(titleName + '最有用的用户评论');
+      //fenleiid 1111111111 哪个牌子好
+      $.ajax({
+        url: "http://193.112.55.79:9090/api/getbrand",
+        type: "get",
+        dataType: "json",
+        data: {
+          brandtitleid: brandtitleId
+        },
+        success: function (res) {
+          console.log(res);
+          var lis = template('getbrand', {
+            item: res.result
+          })
+          // console.log(lis);
+          $('.content_detail_ul').html(lis);
+          // console.log($('.content_detail_ul li))
+          var index=0;
+          $('.content_detail_ul li').eq(0).find('.dianji .left1').addClass('paihang1');
+          $('.content_detail_ul li').eq(1).find('.dianji .left1').addClass('paihang2');
+          $('.content_detail_ul li').eq(2).find('.dianji .left1').addClass('paihang3');
+          var lis= $('.content_detail_ul .left1');
+          console.log(lis);
+          for (var i = 0; i < lis.length; i++) {
+            
+              index++;
+              lis[i].innerHTML = index;
+              
+          }
+          
+        //  $('.content_detail_ul li:eq(1) .dianji span').addClass('paihang1')
+        //  $('.dianji span').addClass('paihang2')
+        //  $('.dianji span').addClass('paihang3')
+        }
+      })
+      //sales sales 22222222222 销量排行榜
+      $.ajax({
+        url: "http://193.112.55.79:9090/api/getbrandproductlist",
+        type: "get",
+        dataType: "json",
+        data: {
+          "brandtitleid": brandtitleId,
+          "limit": 4
+        },
+        success: function (res) {
+          console.log(res);
+          var lis = template('getbrandproductlistsss', {
+            item: res.result
+          })
+          $('.sales_content ul').html(lis);
+         var  productId=$('.sales_content ul li').eq(0).attr("data-productid");//拿到id
+         var  img_src=$('.sales_content ul li .img a img').eq(0).attr("src");//拿到图片src
+         var  titlename=$('.goodsSales a').html();//拿到标题名
+
+         var commentUrl = 'http://193.112.55.79:9090/api/getproductcom?productid='+productId;
+
+          //review 3333333333333 最新评论 内容
+      $.ajax({
+        url: commentUrl,
+        type: "get",
+        dataType: "json",
+       
+        success: function (res) {
+          // var id = location.search.substring(4);
+          var brandtitleIdd = location.search.substring(4);
+        var aa=brandtitleIdd.split('&');
+        var brandtitleId=aa[0];
+          // console.log(id);
+          console.log(res);
+          var lis = template('review_title_li', {
+            item: res.result
+          })
+          // console.log(lis);
+          $('.review ul').html(lis);
+          $('.goodsSales2 img').attr('src',img_src);
+          $('.goodsSales2 p').html(titlename);
+        }
+      })
+         
+        }
+      })
+     
+    })
+  </script>
+
+
+
+
+</body>
+
+</html>

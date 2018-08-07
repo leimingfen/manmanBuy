@@ -38,6 +38,10 @@
   height: 70px;
 }
 
+.content_detail ul li:last-child {
+  border-bottom: 1px solid #d2d2d2;
+}
+
 .content_detail ul li .dianji {
   padding: 8px 0;
   position: relative;
@@ -75,6 +79,10 @@
 
 .paihang3 {
   background-color: #6ceb72;
+}
+
+.content_detail ul {
+  background-color: #fff;
 }
 
 .content_detail ul li .dianji div {

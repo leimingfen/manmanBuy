@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -8,25 +9,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- 理想视口的标准写法 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
-  <title>bootstrap</title>
-  <link rel="stylesheet" href="./lib/css/bootstrap.css">
+  <title>品牌大全 brandTitle</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/public.css">
   <link rel="stylesheet" href="css/content.css">
-  <!-- 条件注释 -->
-  <!-- 
-    1 兼容h5语义标签  html5shiv.js 
-    2 respond.js  识别媒体查询代码 css3  如果以静态文件的方式打开  没有效果 
-   -->
-  <!--[if lt IE 9]>
-      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  <style>
-    .row div {
-      border: 1px solid #000;
-    }
-  </style>
+
 </head>
 
 <body>
@@ -65,27 +52,19 @@
             <span></span>
          
         </li> -->
-
+        
 
       </ul>
     </div>
   </div>
-  <!-- 1 写大容器 .container-fluid -->
-  <div class="container">
-    <!-- 2 写行 .row -->
-
-  </div>
 
   <!-- 底部部分开始 -->
   <footer>
-    <div class="foot_tit">
-      <strong>品牌排行</strong>
-      <i class="iconfont">&#xe72f;</i>
-    </div>
+  
     <div class="foot_user">
       <a href="javascript:;" class="foot_login">登录</a>
       <a href="javascript:;" class="foot_register">注册</a>
-      <a href="javascript:;" class="foot_return">
+      <a href="#top" class="foot_return">
         <i class="iconfont">&#xe648;</i>
         返回顶部
       </a>
@@ -100,16 +79,13 @@
     </div>
   </footer>
   <!-- 底部部分结束 -->
-  <script src="./lib/js/jquery.js"></script>
-  <script src="./lib/js/bootstrap.js"></script>
-   <script src="./lib/art-template/template-web.js"></script>
+  <script src="./lib/zepto/zepto.min.js"></script>
+   <script src="./lib/template/template-web.js"></script>
   
    <script type="text/template" id="brandtitle">
     {{each item value index}}
     <li> 
-        <a href="./fenleiId.html?id={{value.brandTitleId}}">{{value.brandTitle}}</a>
-        <span> > </span>
-     
+        <a href="./getbrand.html?id={{value.brandTitleId}}&{{value.brandTitle}}">{{value.brandTitle}} <span> > </span></a>
     </li>
     {{/each}}
 </script>
@@ -124,6 +100,7 @@
           var lis= template('brandtitle',{item:res.result})
           // console.log(lis);
           $('.content_nav ul').html(lis)
+          
         }
       })
     })
